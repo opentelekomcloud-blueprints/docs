@@ -1,0 +1,7 @@
+.literal-block-wrapper {
+  padding: 0 !important;
+}
+
+.highlight .nv {
+  color: var(--dt-color-text-standard) !important;
+}
