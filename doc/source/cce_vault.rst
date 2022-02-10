@@ -5,12 +5,12 @@ Secrets management with CCE and Hashicorp Vault
 Most modern IT setups are composed of several subsystems like databases, object
 stores, master controller, node access, and more. To access one component from
 another, some form of credentials are required. Configuring and storing these
-secrets directly in the components is considered an antipattern, since a
+secrets directly in the components is considered as an antipattern, since a
 vulnerability of one component may iteratively affect the security of the whole
 setup.
 
 With centralized secret management it becomes unnecessary to keep secrets used
-by various application spreaded across DevOps environments. This helps to close
+by various applications spreaded across DevOps environments. This helps to close
 some security attack vectors (like `secret sprawl
 <https://www.hashicorp.com/resources/what-is-secret-sprawl-why-is-it-harmful>`_,
 `security islands <https://www.conjur.org/blog/security-islands/>`_), but
@@ -98,7 +98,7 @@ With this done token of the service account zookeeper in the zookeeper
 namespace is able to access to the vault for reading secrets located under
 `/secret/tls` path. And since it is higly recommended to follow the least
 required privilege principle only read only access to the TLS data is granted.
-A time to live of three hours is being used here meaning that once application
+A time to live of two hours is being used here meaning that once application
 authorize to Vault the token it gets can be used during next two hours. After
 two hours Vault token becomes invalid and Vault Agent gets a new one valid for
 next 2 hours. This needs to be carefully aligned with the time to live or the
