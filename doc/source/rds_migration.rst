@@ -37,6 +37,11 @@ demanding use-case, as the migration of an MySQL or MariaDB to the cloud, to a f
     :scale: 75
     :target: https://docs.otc.t-systems.com/en-us/usermanual/rds/en-us_topic_dashboard.html
 
+.. seealso::
+
+   `Github Repository <https://www.youtube.com/watch?v=Phk-dP45QBI>`_
+
+   `Apache Nifi Workflow Template <https://www.youtube.com/watch?v=PzBNkObWUXc>`_
 
 Provision a MySQL instance in RDS
 =================================
@@ -44,7 +49,7 @@ Provision a MySQL instance in RDS
 If you don't have an RDS instance in place, let's create one in order to demonstrace this use-case.
 Under Relational Database Service in  Open Telekom Cloud Console,
 
-.. figure:: _static/images/rds_migration/SCR-20220926-kul.png
+.. figure:: _static/images/rds_migration/SCR-20221004-fw6.png
 
 choose *Create DB Instance* and go through the creation wizard:
 
