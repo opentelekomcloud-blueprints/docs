@@ -18,22 +18,22 @@ Overview
 With zero cost in 3rd party components and in less than 15 minutes we are going to transform a highly error prone and
 demanding use-case, as the migration of an MySQL or MariaDB to the cloud, to a fully automated, repeatable and scalable procedure.
 
-.. figure:: _static/images/rds_migration/placeholder-image.jpg
+.. figure:: https://architecture-center-poc-images.obs.eu-de.otc.t-systems.com/rds-migration/placeholder-image.jpg
 
-.. image:: _static/images/rds_migration/SCR-20221004-etc.png
+.. image:: https://architecture-center-poc-images.obs.eu-de.otc.t-systems.com/rds-migration/SCR-20221004-etc.png
     :scale: 75
     :target: https://docs.otc.t-systems.com/en-us/usermanual/rds/en-us_topic_dashboard.html
     :alt: Relational Database Service (RDS)
-.. image:: _static/images/rds_migration/SCR-20221004-etn.png
+.. image:: https://architecture-center-poc-images.obs.eu-de.otc.t-systems.com/rds-migration/SCR-20221004-etn.png
     :scale: 75
     :target: https://docs.otc.t-systems.com/en-us/usermanual/rds/en-us_topic_dashboard.html
-.. image:: _static/images/rds_migration/SCR-20221004-f0m.png
+.. image:: https://architecture-center-poc-images.obs.eu-de.otc.t-systems.com/rds-migration/SCR-20221004-f0m.png
     :scale: 75
     :target: https://docs.otc.t-systems.com/en-us/usermanual/rds/en-us_topic_dashboard.html
-.. image:: _static/images/rds_migration/SCR-20221004-f0q.png
+.. image:: https://architecture-center-poc-images.obs.eu-de.otc.t-systems.com/rds-migration/SCR-20221004-f0q.png
     :scale: 75
     :target: https://docs.otc.t-systems.com/en-us/usermanual/rds/en-us_topic_dashboard.html
-.. image:: _static/images/rds_migration/SCR-20221004-f0u.png
+.. image:: https://architecture-center-poc-images.obs.eu-de.otc.t-systems.com/rds-migration/SCR-20221004-f0u.png
     :scale: 75
     :target: https://docs.otc.t-systems.com/en-us/usermanual/rds/en-us_topic_dashboard.html
 
@@ -49,24 +49,24 @@ Provision a MySQL instance in RDS
 If you don't have an RDS instance in place, let's create one in order to demonstrace this use-case.
 Under Relational Database Service in  Open Telekom Cloud Console,
 
-.. figure:: _static/images/rds_migration/SCR-20221004-fw6.png
+.. figure:: https://architecture-center-poc-images.obs.eu-de.otc.t-systems.com/rds-migration/SCR-20221004-fw6.png
 
 choose *Create DB Instance* and go through the creation wizard:
 
-.. figure:: _static/images/rds_migration/SCR-20220926-9b5.png
+.. figure:: https://architecture-center-poc-images.obs.eu-de.otc.t-systems.com/rds-migration/SCR-20220926-9b5.png
 
 1. Choose the basic details of your database engine. You need to stick for this use-case to MySQL engine v8.0.
 Whether you create a single instance database or a replicated one with primary and standby instances is fairly
 irrelevant in regards to our use-case.
 
-.. figure:: _static/images/rds_migration/SCR-20220926-9c5.png
+.. figure:: https://architecture-center-poc-images.obs.eu-de.otc.t-systems.com/rds-migration/SCR-20220926-9c5.png
 
 2. Create a new Security Group that will allow port 3306 in its inbound ports, and assign this Security Group
 as Security Group of the ECS instances of your database (still in the database creation wizard)
 
-.. figure:: _static/images/rds_migration/SCR-20220926-9d4.png
+.. figure:: https://architecture-center-poc-images.obs.eu-de.otc.t-systems.com/rds-migration/SCR-20220926-9d4.png
 
-.. figure:: _static/images/rds_migration/SCR-20220926-9h7.png
+.. figure:: https://architecture-center-poc-images.obs.eu-de.otc.t-systems.com/rds-migration/SCR-20220926-9h7.png
 
 3. After the database is successfully created, enable SSL support:
 
@@ -96,26 +96,26 @@ and then open your browser and navigate to the following URL address:
 
 enter your credentials and you will land on an empty workflow canvas:
 
-.. figure:: _static/images/rds_migration/SCR-20220810-lt4.png
+.. figure:: https://architecture-center-poc-images.obs.eu-de.otc.t-systems.com/rds-migration/SCR-20220810-lt4.png
 
 Create the migration workflow
 ============================
 
 1. Add a **Processor** of type **GenerateFlowFile**, as the entry point of our workflow (as is instructed in the following picture):
 
-.. figure:: _static/images/rds_migration/SCR-20220810-lvz.png
+.. figure:: https://architecture-center-poc-images.obs.eu-de.otc.t-systems.com/rds-migration/SCR-20220810-lvz.png
 
 2. Add a **Processor** of type **ExecuteStreamCommand**, as the step that will dump and export our source database — and call it ExportMysqlDump:
 
-.. figure:: _static/images/rds_migration/SCR-20220810-m0k.png
+.. figure:: https://architecture-center-poc-images.obs.eu-de.otc.t-systems.com/rds-migration/SCR-20220810-m0k.png
 
 and let’s configure the external command we want this component to execute:
 
-.. figure:: _static/images/rds_migration/SCR-20220810-m2m.png
+.. figure:: https://architecture-center-poc-images.obs.eu-de.otc.t-systems.com/rds-migration/SCR-20220810-m2m.png
 
 go to **Properties** from the tab menu:
 
-.. figure:: _static/images/rds_migration/SCR-20220810-m44.png
+.. figure:: https://architecture-center-poc-images.obs.eu-de.otc.t-systems.com/rds-migration/SCR-20220810-m44.png
 
 As **Command Path** set :
 
@@ -135,7 +135,7 @@ and as **Command Arguments** fill in the mysql-client arguments, but separated b
 Connect the two Processors by dragging a connector line from the first to the latter.
 You should be able to observe now that a **Queue** component is injected between them:
 
-.. figure:: _static/images/rds_migration/SCR-20220810-m8y.png
+.. figure:: https://architecture-center-poc-images.obs.eu-de.otc.t-systems.com/rds-migration/SCR-20220810-m8y.png
 
 We will see later how these Queues contribute to the workflow and how we can use them
 to gain useful insights or debug our workflows.
@@ -154,7 +154,7 @@ a second **Processor** of type **ExecuteStreamCommand**. This Processor (let’s
 will edit the dump file script and replace the DEFINER values with the appropriate user with admin permissions
 who is going to perform the import or execute the script file.
 
-.. figure:: _static/images/rds_migration/SCR-20220812-ni2.png
+.. figure:: https://architecture-center-poc-images.obs.eu-de.otc.t-systems.com/rds-migration/SCR-20220812-ni2.png
 
 As **Command Path** set :
 
@@ -175,12 +175,12 @@ and as **Command Arguments** (*in one line*):
 Connect the two ExecuteCommandStream Processors, by dragging a connector line from the first to the second.
 You should be able to observe now that a second Queue component is added between them on the canvas.
 
-.. figure:: _static/images/rds_migration/SCR-20220812-ngs.png
+.. figure:: https://architecture-center-poc-images.obs.eu-de.otc.t-systems.com/rds-migration/SCR-20220812-ngs.png
 
 4. Add a third **Processor** of type **ExecuteStreamCommand** (same drill as with ExportMysqlDump).
 This step will import the dump to our target database — call it ImportMysqlDump. Let’s configure it:
 
-.. figure:: _static/images/rds_migration/SCR-20220810-mf6.png
+.. figure:: https://architecture-center-poc-images.obs.eu-de.otc.t-systems.com/rds-migration/SCR-20220810-mf6.png
 
 As **Command Path** set :
 
@@ -197,11 +197,11 @@ and as **Command Arguments** (*in one line*):
 Connect the ReplaceDefinersCommand with this new Processor, by dragging a connector line from the first to the second.
 You should be able to observe now that a second Queue component is added between them on the canvas:
 
-.. figure:: _static/images/rds_migration/SCR-20220812-nfj.png
+.. figure:: https://architecture-center-poc-images.obs.eu-de.otc.t-systems.com/rds-migration/SCR-20220812-nfj.png
 
 5. Add a **Processor** of type **LogAttribute**; this component will emit attributes of the FlowFile for a predefined log level.
 
-.. figure:: _static/images/rds_migration/SCR-20220812-dsr.png
+.. figure:: https://architecture-center-poc-images.obs.eu-de.otc.t-systems.com/rds-migration/SCR-20220812-dsr.png
 
 Then drag a connection between the ExportMysqlDump and the LogAttribute Processors, and in the Create Connection popup
 let’s define two new relationships: *original* and *nonzero status*. The former is the original queue message that was
@@ -210,17 +210,17 @@ this step of the workflow. Every relationship will inject a dedicated queue in t
 the ReplaceDefinersCommand Processor. For ImportMySqlDump and LogAttribute Processors, activate all 3 available relationship options.
 The output stream will log the successful results of our import workflow step.
 
-.. figure:: _static/images/rds_migration/SCR-20220812-dum.png
+.. figure:: https://architecture-center-poc-images.obs.eu-de.otc.t-systems.com/rds-migration/SCR-20220812-dum.png
 
 Eventually, our LogAttribute Processor and its dependencies should now look like this on the canvas:
 
-.. figure:: _static/images/rds_migration/SCR-20220812-nk1.png
+.. figure:: https://architecture-center-poc-images.obs.eu-de.otc.t-systems.com/rds-migration/SCR-20220812-nk1.png
 
 6. Start the Processors. As you will notice on the left-hand upper corner of every Processor on the canvas appears a stop sign.
 That means that the Processors will not execute any commands even if we kick off a new instance of the workflow.
 In order to start them press, for every single one of them — except LogAttribute, the start button marked with blue in the picture below:
 
-.. figure:: _static/images/rds_migration/SCR-20220812-e7c.png
+.. figure:: https://architecture-center-poc-images.obs.eu-de.otc.t-systems.com/rds-migration/SCR-20220812-e7c.png
 
 Configure the Apache Nifi Server
 ==============================
@@ -246,7 +246,7 @@ and install the client (in this case is the *mariadb-client* package):
 A quick sanity check to make sure that everything is in place. For that matter go to `/usr/bin/` and make sure you
 that `mysqldump` and `mysql` are properly symlinked:
 
-.. figure:: _static/images/rds_migration/SCR-20220812-eii.png
+.. figure:: https://architecture-center-poc-images.obs.eu-de.otc.t-systems.com/rds-migration/SCR-20220812-eii.png
 
 Next we have to copy to the Apache Nifi container the SSL certificate we downloaded from the Open Telekom Cloud console.
 
@@ -263,27 +263,27 @@ Start a Migration Workflow
 
 Open the cascading menu of the *GenerateFlowFile* component and click *Run Once*:
 
-.. figure:: _static/images/rds_migration/SCR-20220812-f0t.png
+.. figure:: https://architecture-center-poc-images.obs.eu-de.otc.t-systems.com/rds-migration/SCR-20220812-f0t.png
 
 The current active Processor will be marked with this sign on right-hand upper corner on the canvas:
 
-.. figure:: _static/images/rds_migration/SCR-20220812-f32.png
+.. figure:: https://architecture-center-poc-images.obs.eu-de.otc.t-systems.com/rds-migration/SCR-20220812-f32.png
 
 Let’s see what happened and if the migration went through, and if no how could we debug and trace the source of our problem.
 The canvas now will be updated with some more data in every *Processor* and *Queue*:
 
-.. figure:: _static/images/rds_migration/SCR-20220812-nsn.png
+.. figure:: https://architecture-center-poc-images.obs.eu-de.otc.t-systems.com/rds-migration/SCR-20220812-nsn.png
 
 *GenerateFlowFile* Processor is informing us that has sent 1 request down the pipeline (*Out* 1 — in box marked in blue).
 The *ExecuteMysqlDump* Processor ran successfully and wrote out a dump in the size of 160.59MB. Its logging queues show
 us that we have a new entry in *original* and zero entries in *nonzero status*. (The latter indicates that the Processor ran **without any error**).
 Let’s see what was written in the original queue. Open the queue:
 
-.. figure:: _static/images/rds_migration/SCR-20220812-fap.png
+.. figure:: https://architecture-center-poc-images.obs.eu-de.otc.t-systems.com/rds-migration/SCR-20220812-fap.png
 
 and under the *Properties* tab of the Queue, we can see which command was executed by our Processor:
 
-.. figure:: _static/images/rds_migration/SCR-20220812-fc21.png
+.. figure:: https://architecture-center-poc-images.obs.eu-de.otc.t-systems.com/rds-migration/SCR-20220812-fc21.png
 
 Now let's focus on the second ExecuteStreamCommand Processor, the one that is responsible to import the dump to the target database.
 We can see that it received an input of 160.59MB (that is our dump file, generated from the previous Processor);
@@ -292,16 +292,16 @@ because we have items in the *nonzero status* queue. As a first step finding the
 (open the *List Queue* and pick the element that corresponds to this very workflow instance under the *Details* tab).
 We can either inspect the generated dump file that was handed over by the ExportMysqlDump Processor by either viewing or download it,
 
-.. figure:: _static/images/rds_migration/SCR-20220812-fhz.png
+.. figure:: https://architecture-center-poc-images.obs.eu-de.otc.t-systems.com/rds-migration/SCR-20220812-fhz.png
 
 or inspect the command that was executed to see if there is a helpful error message (in our case there is one):
 
-.. figure:: _static/images/rds_migration/SCR-20220812-fhm1.png
+.. figure:: https://architecture-center-poc-images.obs.eu-de.otc.t-systems.com/rds-migration/SCR-20220812-fhm1.png
 
 A faster way though, figuring out what went wrong, is hovering over the red sign (that will appear in case of error)
 in the upper right-hand corner of our Processor that threw the error:
 
-.. figure:: _static/images/rds_migration/SCR-20220812-flv.png
+.. figure:: https://architecture-center-poc-images.obs.eu-de.otc.t-systems.com/rds-migration/SCR-20220812-flv.png
 
 Now that we saw how we can, in principle, debug and investigate errors during the execution of our workflows, go back
 to previous chapter guidelines and, this time, do copy the SSL certificate to the Apache Nifi container.
@@ -316,7 +316,7 @@ on this component. After a while, when the workflow will:
 
 then check your database — the migration would have successfully completed:
 
-.. figure:: _static/images/rds_migration/SCR-20220926-bhx.png
+.. figure:: https://architecture-center-poc-images.obs.eu-de.otc.t-systems.com/rds-migration/SCR-20220926-bhx.png
 
 References
 ==========
@@ -326,18 +326,3 @@ References
    `Relational Database Service: Accessing RDS <https://www.youtube.com/watch?v=Phk-dP45QBI>`_
 
    `Database Services Overview with RDS Deep Dive <https://www.youtube.com/watch?v=PzBNkObWUXc>`_
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
