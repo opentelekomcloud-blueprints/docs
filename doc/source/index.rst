@@ -13,3 +13,4 @@ validated recommendations from our experts.
    :maxdepth: 1
 
    cce_vault.rst
+   rds_migration.rst
