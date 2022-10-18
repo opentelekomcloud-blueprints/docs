@@ -1,4 +1,4 @@
-By Industry
+Healthcare
 ==========
 
 Users sometimes identify use cases that can be solved in a standardized way to
@@ -12,9 +12,4 @@ validated recommendations from our experts.
 .. toctree::
    :maxdepth: 1
 
-   media/index.rst
-   automotive/index.rst
-   education/index.rst
-   finance/index.rst
-   healthcare/index.rst
-   retail/index.rst
+   rds_migration.rst

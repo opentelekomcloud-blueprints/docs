@@ -16,3 +16,5 @@ validated recommendations from our experts.
 
    use-cases/index.rst
    industry/index.rst
+   best-practices/index.rst
+   marketplace/index.rst
