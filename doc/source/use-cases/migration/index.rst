@@ -1,5 +1,5 @@
-Blueprints
-==========
+Migration
+=========
 
 Users sometimes identify use cases that can be solved in a standardized way to
 save research time and effort. Blueprints are a series of best practices,
@@ -10,9 +10,6 @@ validated recommendations from our experts.
 
 
 .. toctree::
-   :glob:
    :maxdepth: 1
-   :hidden:
 
-   use-cases/index.rst
-   industry/index.rst
+   cce_vault.rst

@@ -1,4 +1,4 @@
-Blueprints
+By Industry
 ==========
 
 Users sometimes identify use cases that can be solved in a standardized way to
@@ -10,9 +10,7 @@ validated recommendations from our experts.
 
 
 .. toctree::
-   :glob:
    :maxdepth: 1
-   :hidden:
 
-   use-cases/index.rst
-   industry/index.rst
+   cce_vault.rst
+   rds_migration.rst
