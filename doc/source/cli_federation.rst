@@ -19,7 +19,7 @@ OpenID connect
 ==============
 
 
-Prepare 2 files under ```~/.config/openstack/```, your ```clouds.yaml``` and your ```secure.yaml``` for keeping the credentials seperate
+Prepare 2 files under ``~/.config/openstack/``, your ``clouds.yaml`` and your ``secure.yaml`` for keeping the credentials seperate
 
 **clouds.yaml**
 
