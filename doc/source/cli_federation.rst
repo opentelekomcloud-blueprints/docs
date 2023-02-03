@@ -83,17 +83,6 @@ SAML
       password: 'Test54321!'
 
 
-
-
-.. code-block:: yaml
-
-  clouds:
-    otcfirstproject:
-      profile: otc
-      auth:
-        username: '<USER_NAME>'
-
-
 Please note, the SAML IDP musst support the so called `ECP-Flow <http://docs.oasis-open.org/security/saml/Post2.0/saml-ecp/v2.0/saml-ecp-v2.0.html>`_.
 In Keycloak this needs to be enabled explicitly. AWS SSO (AWS IAM Identity Center) does not support ECP at all, so using the openstackclient in this combination would not be possible.
 Check the documentation of your idp to see if it supports SAML ECP
