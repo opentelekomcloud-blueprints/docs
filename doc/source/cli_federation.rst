@@ -80,7 +80,7 @@ SAML
 
   clouds:	
     tenant_with_saml:
-      password: 'Test54321!'
+      password: 'Test1234'
 
 
 Please note, the SAML IDP musst support the so called `ECP-Flow <http://docs.oasis-open.org/security/saml/Post2.0/saml-ecp/v2.0/saml-ecp-v2.0.html>`_.
