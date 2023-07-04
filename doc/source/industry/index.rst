@@ -1,5 +1,5 @@
-Blueprints
-==========
+By Industry
+===========
 
 Users sometimes identify use cases that can be solved in a standardized way to
 save research time and effort. Blueprints are a series of best practices,
@@ -10,10 +10,11 @@ validated recommendations from our experts.
 
 
 .. toctree::
-   :glob:
    :maxdepth: 1
-   :hidden:
 
-   best-practices/index.rst
-   industry/index.rst
-   use-cases/index.rst
+   automotive/index.rst
+   education/index.rst
+   finance/index.rst
+   healthcare/index.rst
+   media/index.rst
+   retail/index.rst

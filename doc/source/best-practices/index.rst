@@ -1,5 +1,5 @@
-Blueprints
-==========
+Best Practices
+==============
 
 Users sometimes identify use cases that can be solved in a standardized way to
 save research time and effort. Blueprints are a series of best practices,
@@ -10,10 +10,10 @@ validated recommendations from our experts.
 
 
 .. toctree::
-   :glob:
    :maxdepth: 1
-   :hidden:
 
-   best-practices/index.rst
-   industry/index.rst
-   use-cases/index.rst
+   computing/index.rst
+   data-analysis/index.rst
+   network/index.rst
+   security/index.rst
+   storage/index.rst
