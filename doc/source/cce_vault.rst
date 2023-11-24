@@ -30,9 +30,6 @@ internal credentials.
 Overview
 ========
 
-.. graphviz:: dot/cce_vault_overview.dot
-   :layout: dot
-
 TLS secrets are kept in the Vault. They are being read by Vault Agent component
 running as a sidecar in Zookeeper service pod and writes certificates onto the
 file system. Zookeeper services reads certificates populated by Agent. Vault
