@@ -1,4 +1,4 @@
-Blueprints
+Healthcare
 ==========
 
 Users sometimes identify use cases that can be solved in a standardized way to
@@ -10,10 +10,4 @@ validated recommendations from our experts.
 
 
 .. toctree::
-   :glob:
    :maxdepth: 1
-   :hidden:
-
-   best-practices/index.rst
-   industry/index.rst
-   use-cases/index.rst
